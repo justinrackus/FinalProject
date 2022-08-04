@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.cst2335.finalproject">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,8 +13,19 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FinalProject"
+        android:theme="@style/Theme.Cocktail"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
+        <activity
+            android:name=".SavedCocktail"
+            android:exported="false" />
+        <activity
+            android:name=".EmptyActivity_Cocktail"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity_Cocktail"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

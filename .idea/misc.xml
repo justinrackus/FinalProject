@@ -4,6 +4,18 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/16139/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
+        <entry key="..\:/Users/YS/Documents/2022S/cst2335/FinalProject/app/src/main/res/layout/activity_cocktail.xml" value="0.35572916666666665" />
+        <entry key="..\:/Users/YS/Documents/2022S/cst2335/FinalProject/app/src/main/res/layout/activity_details_fragment_cocktail.xml" value="0.35572916666666665" />
+        <entry key="..\:/Users/YS/Documents/2022S/cst2335/FinalProject/app/src/main/res/layout/activity_empty_cocktail.xml" value="0.35572916666666665" />
+        <entry key="..\:/Users/YS/Documents/2022S/cst2335/FinalProject/app/src/main/res/layout/activity_main.xml" value="0.35572916666666665" />
+        <entry key="..\:/Users/YS/Documents/2022S/cst2335/FinalProject/app/src/main/res/layout/activity_main_cocktail.xml" value="0.35572916666666665" />
+        <entry key="..\:/Users/YS/Documents/2022S/cst2335/FinalProject/app/src/main/res/layout/activity_my_open_helper_cocktail.xml" value="0.35572916666666665" />
+        <entry key="..\:/Users/YS/Documents/2022S/cst2335/FinalProject/app/src/main/res/layout/activity_saved_cocktail.xml" value="0.4588541666666667" />
+        <entry key="..\:/Users/YS/Documents/2022S/cst2335/FinalProject/app/src/main/res/layout/activity_saved_codktail.xml" value="0.35572916666666665" />
+        <entry key="..\:/Users/YS/Documents/2022S/cst2335/FinalProject/app/src/main/res/layout/cocktailrow_layout.xml" value="0.6" />
+        <entry key="..\:/Users/YS/Documents/2022S/cst2335/FinalProject/app/src/main/res/layout/fragment_details_cocktail.xml" value="0.35572916666666665" />
+        <entry key="..\:/Users/YS/Documents/2022S/cst2335/FinalProject/app/src/main/res/layout/header_layout_cocktail.xml" value="0.266015625" />
+        <entry key="..\:/Users/YS/Documents/2022S/cst2335/FinalProject/app/src/main/res/menu/cocktail_menu.xml" value="0.35572916666666665" />
       </map>
     </option>
   </component>
