@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/home"
+        android:title="@string/home"
+        android:icon="@drawable/home"
+        android:orderInCategory="10"
+        app:showAsAction="always"/>  <!-- This uses showAsAction=always, so look at icon= parameter -->
+
+    <item android:id="@+id/search"
+        android:orderInCategory="20"
+        app:actionViewClass="android.widget.SearchView"
+        android:icon="@drawable/search"
+        app:showAsAction="always|collapseActionView"
+        android:title="@string/search"/>    <!-- This uses showAsAction=always, so look at icon= parameter -->
+
+    <item android:id="@+id/help"
+        android:icon="@drawable/question"
+        android:title="Help"
+        app:showAsAction="always"
+        android:orderInCategory="30"/>
+
+    <item android:id="@+id/email"
+        android:icon="@drawable/email"
+        android:orderInCategory="40"
+        app:showAsAction="never"
+        android:title="Contact"/> <!-- This uses showAsAction=never, so look at title= parameter -->
+
+</menu>
