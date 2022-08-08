@@ -49,6 +49,13 @@ public class DetailsFragment_Cocktail extends Fragment {
     ImageView picIV;
     String picF;
 
+    /**
+     * create and show the fragment part of the cocktail search
+     * @param inflater inflate layout
+     * @param container in group
+     * @param savedInstanceState a bundle used to save instance state
+     * @return a view for display
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -151,8 +158,16 @@ public class DetailsFragment_Cocktail extends Fragment {
     };
 */
 
+    /**
+     * this class will start the AsyncTask and pull the cocktail info from the given website
+     */
     class DetailsCocktail extends AsyncTask<String, Integer, String> {
 
+        /**
+         * doInBackground will pull all cocktail info. from the website
+         * @param urls string urls
+         * @return returns a string telling the user task is complete "Done"
+         */
         public String doInBackground(String... urls) {
             try {
                 URL picUrl = new URL(urls[0]);
@@ -174,6 +189,11 @@ public class DetailsFragment_Cocktail extends Fragment {
             }
             return "Done";
         }
+
+        /**
+         * this method will show the picture after user put the cocktail name in
+         * @param string parameter in string
+         */
         public void onPostExecute(String string) {
             super.onPostExecute(string);
             picIV.setImageBitmap(bitm);

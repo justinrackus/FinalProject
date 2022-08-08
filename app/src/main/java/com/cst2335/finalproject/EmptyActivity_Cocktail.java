@@ -8,6 +8,10 @@ import android.widget.Button;
 
 public class EmptyActivity_Cocktail extends AppCompatActivity {
 
+    /**
+     * this onCreate method will load the fragment and pass data to it
+     * @param savedInstanceState is the saved instance state
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

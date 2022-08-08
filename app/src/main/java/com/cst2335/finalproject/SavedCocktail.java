@@ -38,6 +38,10 @@ public class SavedCocktail extends AppCompatActivity {
     private Bitmap bitm;
     private ImageView picIV;
 
+    /**
+     * the class shows the info that has saved after user saved the search cocktail
+     * @param savedInstanceState a bundle used to save instance state
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +77,14 @@ public class SavedCocktail extends AppCompatActivity {
         myAdapter.notifyDataSetChanged();
 
         myList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            /**
+             * to show dialog window, and fragment view on tablet and phone
+             * @param parent adapterView
+             * @param view view
+             * @param position position of the saved item
+             * @param id id of the saved item
+             * @return false
+             */
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 Cocktail whatWasClicked = savedList.get(position);
@@ -116,10 +128,32 @@ public class SavedCocktail extends AppCompatActivity {
             }
         });
     }
+    /**
+     * this class helps user deal with the list view
+     */
     public class MyListAdapter extends BaseAdapter {
+        /**
+         * get method to return number of items in the list
+         * @return size of the list
+         */
         public int getCount() { return savedList.size();}
+        /**
+         * get method to return the cocktail in a given position
+         * @param position position number of the item
+         * @return the cocktail name in the position
+         */
         public Cocktail getItem(int position) { return savedList.get(position);}
+        /**
+         * get method to return the database id in a given position
+         * @param position position number of the item
+         * @return the database id in the position
+         */
         public long getItemId(int position) { return position;}
+        /**
+         * get method that prepares the position to be displayed in the list view
+         * @param position position
+         * @return the view in the position
+         */
         public View getView(int position, View convertView, ViewGroup parent) {
             LayoutInflater inflater = getLayoutInflater();
             View rowView = inflater.inflate(R.layout.cocktailrow_layout, parent, false);

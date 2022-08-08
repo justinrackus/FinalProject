@@ -50,15 +50,15 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class MainActivity_Cocktail extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemSelectedListener{
+
     private ListView myList;
     private ArrayList<Cocktail> cocktailList;
     private MyListAdapter_Cocktail adapter;
     private TextView row;
     private EditText searchText;
-    //private String input;
     private DetailsFragment_Cocktail dFragment;
+    //private String input;
     private String name;
     private String pic;
     private String instruction;
@@ -69,6 +69,11 @@ public class MainActivity_Cocktail extends AppCompatActivity implements Navigati
     private Button searchCocktail;
     private Bitmap bitmap;
 
+    /**
+     * onCreate method of the activity, will be called when the activity starts
+     * it will initialize the activity
+     * @param savedInstanceState is the saved instance state
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,6 +93,11 @@ public class MainActivity_Cocktail extends AppCompatActivity implements Navigati
 //*************************************************************************************************
         searchCocktail = findViewById(R.id.searchBtn);
         searchCocktail.setOnClickListener(new View.OnClickListener() {
+            /**
+             * set click listener on search button to search for the cocktail from
+             * database
+             * @param v the view of search result
+             */
             @Override
             public void onClick(View v) {
                 if (!searchText.getText().toString().isEmpty()) {
@@ -102,6 +112,10 @@ public class MainActivity_Cocktail extends AppCompatActivity implements Navigati
 //*************************************************************************************************
         Button savedBtn = findViewById(R.id.savedBtn);
         savedBtn.setOnClickListener(new View.OnClickListener() {
+            /**
+             * save button will lead the user goes to the saved cocktail page
+             * @param v of save result
+             */
             @Override
             public void onClick(View v) {
                 Intent goToSaved = new Intent(MainActivity_Cocktail.this, SavedCocktail.class);
@@ -128,6 +142,10 @@ public class MainActivity_Cocktail extends AppCompatActivity implements Navigati
 //**************************************************************************************************
         //fragment part
         boolean isTablet = findViewById(R.id.fragmentLocation) != null;
+        /**
+         * set item click listener on the list to show detail info. of the selected, the info. will
+         * be shown in the fragment
+         */
         myList.setOnItemClickListener((list, view, position, id) ->{
             //Create a bundle to pass data to the new fragment
             Bundle dataToPass = new Bundle();
@@ -167,12 +185,22 @@ public class MainActivity_Cocktail extends AppCompatActivity implements Navigati
     }
     *//////////
 //**************************************************************************************************
+
+    /**
+     * this class will start the AsyncTask and pull the cocktail info from the given website
+     */
     private class MyHTTPRequest_Cocktail extends AsyncTask<String, Integer, ArrayList<Cocktail>> {
         protected void onPreExecute(){
             super.onPreExecute();
             cocktailList.clear();
             String input = searchText.getText().toString();
         }
+
+        /**
+         * doInBackground will pull all cocktail info. from the website
+         * @param args arg list of the method
+         * @return returns a string telling the user task is complete
+         */
         public ArrayList<Cocktail> doInBackground(String ... args){
             try{
                 //create a URL object of what server to contact
@@ -218,10 +246,20 @@ public class MainActivity_Cocktail extends AppCompatActivity implements Navigati
             }
             return cocktailList;
         }
+
+        /**
+         * this method will update the progress bar
+         * @param args parameter list of the method
+         */
         public void onProgressUpdate(Integer ... args){
             pb.setVisibility(View.VISIBLE);
             pb.setProgress(args[0]);
         }
+
+        /**
+         * this method will show the list view, hide the progress bar
+         * @param result parameter list of the method
+         */
         public void onPostExecute(ArrayList<Cocktail> result) {
             pb.setVisibility(View.INVISIBLE);
             myList.setAdapter(adapter);
@@ -229,6 +267,10 @@ public class MainActivity_Cocktail extends AppCompatActivity implements Navigati
 
     }
     //**************************************************************************************************
+
+    /**
+     * this class helps user deal with the list view
+     */
     public class MyListAdapter_Cocktail extends ArrayAdapter<Cocktail> {
         private ArrayList<Cocktail> list = new ArrayList<>();
         private Context context;
@@ -238,9 +280,32 @@ public class MainActivity_Cocktail extends AppCompatActivity implements Navigati
             super(context, 0, cocktail);
             this.context = context;
         }
+
+        /**
+         * get method to return number of items in the list
+         * @return size of the list
+         */
         public int getCount() { return cocktailList.size();}
+
+        /**
+         * get method to return the cocktail in a given position
+         * @param position position number of the item
+         * @return the cocktail name in the position
+         */
         public Cocktail getItem(int position) { return cocktailList.get(position);}
+
+        /**
+         * get method to return the database id in a given position
+         * @param position position number of the item
+         * @return the database id in the position
+         */
         public long getItemId(int position) { return position;}
+
+        /**
+         * get method that prepares the position to be displayed in the list view
+         * @param position position
+         * @return the view in the position
+         */
         public View getView(int position, View convertView, ViewGroup parent) {
             /*
             Cocktail cocktail = getItem(position);
@@ -259,6 +324,11 @@ public class MainActivity_Cocktail extends AppCompatActivity implements Navigati
         }
     }
     //**************************************************************************************************
+
+    /**
+     * alert dialog for the instruction
+     * @return dialogbuiler
+     */
     public Dialog instruction() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setTitle("Help API")
@@ -275,6 +345,12 @@ public class MainActivity_Cocktail extends AppCompatActivity implements Navigati
         return alertDialogBuilder.create();
     }
     //**************************************************************************************************
+
+    /**
+     * to set menu inflater
+     * @param menu menu list
+     * @return menu
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu items for use in the action bar
@@ -283,6 +359,12 @@ public class MainActivity_Cocktail extends AppCompatActivity implements Navigati
         return true;
     }
 
+    /**
+     * set items in menu, use switch and cases to show different toast
+     * messages when click on different items under menu
+     * @param item in menu
+     * @return menu items
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         String message = null;
@@ -309,7 +391,11 @@ public class MainActivity_Cocktail extends AppCompatActivity implements Navigati
         return true;
     }
 
-    // Needed for the OnNavigationItemSelected interface:
+    /**
+     * Needed for the OnNavigationItemSelected interface:
+     * @param item under menu
+     * @return items under menu
+     */
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         String message = null;
@@ -338,6 +424,10 @@ public class MainActivity_Cocktail extends AppCompatActivity implements Navigati
         return false;
     }
     //******************************************************************************************
+
+    /**
+     * use sharedPreferences to save the input
+     */
     @Override
     public void onPause(){
         super.onPause();

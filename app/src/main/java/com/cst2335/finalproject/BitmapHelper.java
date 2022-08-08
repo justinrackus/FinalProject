@@ -9,6 +9,13 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class BitmapHelper{
+
+    /**
+     * to connect and load the picture online to show
+     * @param s string
+     * @param context context
+     * @return bitmap picture
+     */
     public static Bitmap getBitmap(String s, Context context){
         URL url = null;
         Bitmap bitmap = null;

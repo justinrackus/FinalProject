@@ -4,18 +4,22 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/16139/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
-        <entry key="..\:/Users/YS/Documents/2022S/cst2335/FinalProject/app/src/main/res/layout/activity_cocktail.xml" value="0.35572916666666665" />
-        <entry key="..\:/Users/YS/Documents/2022S/cst2335/FinalProject/app/src/main/res/layout/activity_details_fragment_cocktail.xml" value="0.35572916666666665" />
-        <entry key="..\:/Users/YS/Documents/2022S/cst2335/FinalProject/app/src/main/res/layout/activity_empty_cocktail.xml" value="0.35572916666666665" />
-        <entry key="..\:/Users/YS/Documents/2022S/cst2335/FinalProject/app/src/main/res/layout/activity_main.xml" value="0.35572916666666665" />
-        <entry key="..\:/Users/YS/Documents/2022S/cst2335/FinalProject/app/src/main/res/layout/activity_main_cocktail.xml" value="0.35572916666666665" />
-        <entry key="..\:/Users/YS/Documents/2022S/cst2335/FinalProject/app/src/main/res/layout/activity_my_open_helper_cocktail.xml" value="0.35572916666666665" />
-        <entry key="..\:/Users/YS/Documents/2022S/cst2335/FinalProject/app/src/main/res/layout/activity_saved_cocktail.xml" value="0.4588541666666667" />
-        <entry key="..\:/Users/YS/Documents/2022S/cst2335/FinalProject/app/src/main/res/layout/activity_saved_codktail.xml" value="0.35572916666666665" />
-        <entry key="..\:/Users/YS/Documents/2022S/cst2335/FinalProject/app/src/main/res/layout/cocktailrow_layout.xml" value="0.6" />
-        <entry key="..\:/Users/YS/Documents/2022S/cst2335/FinalProject/app/src/main/res/layout/fragment_details_cocktail.xml" value="0.35572916666666665" />
-        <entry key="..\:/Users/YS/Documents/2022S/cst2335/FinalProject/app/src/main/res/layout/header_layout_cocktail.xml" value="0.266015625" />
-        <entry key="..\:/Users/YS/Documents/2022S/cst2335/FinalProject/app/src/main/res/menu/cocktail_menu.xml" value="0.35572916666666665" />
+        <entry key="..\:/Users/lucia/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_details_fragment_food.xml" value="0.18857142857142858" />
+        <entry key="..\:/Users/lucia/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_empty_cocktail.xml" value="0.1" />
+        <entry key="..\:/Users/lucia/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_empty_food.xml" value="0.2264957264957265" />
+        <entry key="..\:/Users/lucia/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_main.xml" value="0.18857142857142858" />
+        <entry key="..\:/Users/lucia/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_main_cocktail.xml" value="0.12760416666666666" />
+        <entry key="..\:/Users/lucia/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_main_food.xml" value="0.2857142857142857" />
+        <entry key="..\:/Users/lucia/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_saved_cocktail.xml" value="0.1" />
+        <entry key="..\:/Users/lucia/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_saved_food.xml" value="0.2427536231884058" />
+        <entry key="..\:/Users/lucia/AndroidStudioProjects/FinalProject/app/src/main/res/layout/cocktailrow_layout.xml" value="0.1" />
+        <entry key="..\:/Users/lucia/AndroidStudioProjects/FinalProject/app/src/main/res/layout/food_details_fragment.xml" value="0.2427536231884058" />
+        <entry key="..\:/Users/lucia/AndroidStudioProjects/FinalProject/app/src/main/res/layout/foodrow_layout.xml" value="0.22564102564102564" />
+        <entry key="..\:/Users/lucia/AndroidStudioProjects/FinalProject/app/src/main/res/layout/fragment_details_cocktail.xml" value="0.1" />
+        <entry key="..\:/Users/lucia/AndroidStudioProjects/FinalProject/app/src/main/res/layout/fragment_details_food.xml" value="0.2427536231884058" />
+        <entry key="..\:/Users/lucia/AndroidStudioProjects/FinalProject/app/src/main/res/layout/header_layout_cocktail.xml" value="0.1" />
+        <entry key="..\:/Users/lucia/AndroidStudioProjects/FinalProject/app/src/main/res/layout/header_layout_food.xml" value="0.1" />
+        <entry key="..\:/Users/lucia/AndroidStudioProjects/FinalProject/app/src/main/res/layout/list_items.xml" value="0.2713541666666667" />
       </map>
     </option>
   </component>
