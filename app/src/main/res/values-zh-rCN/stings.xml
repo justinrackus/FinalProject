@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">鸡尾酒</string>
-    <string name="open">打开</string>
-    <string name="close">关闭</string>
-    <string name="home">主页</string>
-    <string name="search">查询</string>
+    <string name="app_name">鸡尾酒单</string>
+    <string name="open">进行打开</string>
+    <string name="close">进行关闭</string>
+    <string name="home">进入主页</string>
+    <string name="search">进行查询</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">你好 空白页面</string>
-    <string name="snackbar_on">已保存</string>
-    <string name="snackbar_off">已删除</string>
-    <string name="snackbar_undo">撤销</string>
+    <string name="hello_blank_fragment">你好 这里是初始页</string>
+    <string name="snackbar_on">保存</string>
+    <string name="snackbar_off">删除</string>
+    <string name="snackbar_undo">撤销操作</string>
 </resources>

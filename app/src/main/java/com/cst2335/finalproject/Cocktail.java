@@ -2,6 +2,7 @@ package com.cst2335.finalproject;
 
 import android.graphics.Bitmap;
 
+
 public class Cocktail {
     String name;
     String url;
