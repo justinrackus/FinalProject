@@ -21,11 +21,18 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.cst2335.finalproject.Cocktail;
+import com.cst2335.finalproject.DetailsFragment_Cocktail;
+import com.cst2335.finalproject.EmptyActivity_Cocktail;
+import com.cst2335.finalproject.MyOpenHelper_Cocktail;
+import com.cst2335.finalproject.R;
+
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+
 
 public class SavedCocktail extends AppCompatActivity {
     private MyOpenHelper_Cocktail myOpener;
@@ -38,6 +45,10 @@ public class SavedCocktail extends AppCompatActivity {
     private Bitmap bitm;
     private ImageView picIV;
 
+    /**
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +75,7 @@ public class SavedCocktail extends AppCompatActivity {
             long id = history.getInt(idIndex);
             savedList.add(new Cocktail(name,pic,instru,ingre1,ingre2,ingre3,id));
         }
-      //  Log.e("index", savedList.toString());
+        //  Log.e("index", savedList.toString());
 
         history.close();
         row = findViewById(R.id.rowCocktail);
@@ -73,10 +84,18 @@ public class SavedCocktail extends AppCompatActivity {
         myAdapter.notifyDataSetChanged();
 
         myList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            /**
+             *
+             * @param parent
+             * @param view
+             * @param position
+             * @param id
+             * @return
+             */
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 Cocktail whatWasClicked = savedList.get(position);
-               // whatWasClicked.getId();
+                // whatWasClicked.getId();
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(SavedCocktail.this);
                 alertDialogBuilder.setTitle("Do you want to delete this ？")
                         .setMessage("The selected row is:" + position + " " + "The database id is:" + whatWasClicked.getId())
@@ -116,10 +135,36 @@ public class SavedCocktail extends AppCompatActivity {
             }
         });
     }
+
+
     public class MyListAdapter extends BaseAdapter {
+        /**
+         *
+         * @return savedList
+         */
         public int getCount() { return savedList.size();}
+
+        /**
+         *
+         * @param position
+         * @return savedList
+         */
         public Cocktail getItem(int position) { return savedList.get(position);}
+
+        /**
+         *
+         * @param position
+         * @return position
+         */
         public long getItemId(int position) { return position;}
+
+        /**
+         *
+         * @param position
+         * @param convertView
+         * @param parent
+         * @return rowView
+         */
         public View getView(int position, View convertView, ViewGroup parent) {
             LayoutInflater inflater = getLayoutInflater();
             View rowView = inflater.inflate(R.layout.cocktailrow_layout, parent, false);

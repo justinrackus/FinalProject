@@ -52,6 +52,7 @@ import java.util.List;
 
 
 public class MainActivity_Cocktail extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemSelectedListener{
+
     private ListView myList;
     private ArrayList<Cocktail> cocktailList;
     private MyListAdapter_Cocktail adapter;
@@ -87,6 +88,7 @@ public class MainActivity_Cocktail extends AppCompatActivity implements Navigati
         pb.setVisibility(View.VISIBLE);
 //*************************************************************************************************
         searchCocktail = findViewById(R.id.searchBtn);
+
         searchCocktail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -167,12 +169,20 @@ public class MainActivity_Cocktail extends AppCompatActivity implements Navigati
     }
     *//////////
 //**************************************************************************************************
+
+
     private class MyHTTPRequest_Cocktail extends AsyncTask<String, Integer, ArrayList<Cocktail>> {
         protected void onPreExecute(){
             super.onPreExecute();
             cocktailList.clear();
             String input = searchText.getText().toString();
         }
+
+        /**
+         *
+         * @param args
+         * @return cocktaiList
+         */
         public ArrayList<Cocktail> doInBackground(String ... args){
             try{
                 //create a URL object of what server to contact
@@ -218,10 +228,20 @@ public class MainActivity_Cocktail extends AppCompatActivity implements Navigati
             }
             return cocktailList;
         }
+
+        /**
+         *
+         * @param args
+         */
         public void onProgressUpdate(Integer ... args){
             pb.setVisibility(View.VISIBLE);
             pb.setProgress(args[0]);
         }
+
+        /**
+         *
+         * @param result
+         */
         public void onPostExecute(ArrayList<Cocktail> result) {
             pb.setVisibility(View.INVISIBLE);
             myList.setAdapter(adapter);
@@ -310,6 +330,12 @@ public class MainActivity_Cocktail extends AppCompatActivity implements Navigati
     }
 
     // Needed for the OnNavigationItemSelected interface:
+
+    /**
+     *
+     * @param item
+     * @return
+     */
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         String message = null;
@@ -338,6 +364,8 @@ public class MainActivity_Cocktail extends AppCompatActivity implements Navigati
         return false;
     }
     //******************************************************************************************
+
+
     @Override
     public void onPause(){
         super.onPause();

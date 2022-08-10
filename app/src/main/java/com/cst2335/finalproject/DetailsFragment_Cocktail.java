@@ -41,6 +41,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Locale;
 
+
 public class DetailsFragment_Cocktail extends Fragment {
     MyOpenHelper_Cocktail myOpener;
     SQLiteDatabase myDatabase;
@@ -49,6 +50,14 @@ public class DetailsFragment_Cocktail extends Fragment {
     ImageView picIV;
     String picF;
 
+    /**
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * lll
+     * @return result
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -93,7 +102,6 @@ public class DetailsFragment_Cocktail extends Fragment {
             Intent goBack = new Intent(getActivity(), MainActivity_Cocktail.class);
             startActivity(goBack);
         });
-
         Button saveBtn = result.findViewById(R.id.saveBtn_frag);
         saveBtn.setOnClickListener((View clk) -> {
             String[] args = {nameF};
@@ -103,6 +111,11 @@ public class DetailsFragment_Cocktail extends Fragment {
                 alertDialogBuilder.setTitle("Item already saved")
                         .setMessage("Please check saved list")
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            /**
+                             *
+                             * @param dialog
+                             * @param which
+                             */
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                             }})
@@ -120,6 +133,10 @@ public class DetailsFragment_Cocktail extends Fragment {
                 long id = myDatabase.insert(MyOpenHelper_Cocktail.TABLE_NAME, null, newRow);
                 Snackbar snackbar1 = Snackbar.make(saveBtn, "Item Saved", Snackbar.LENGTH_LONG)
                         .setAction(getResources().getString(R.string.snackbar_undo), new View.OnClickListener() {
+                            /**
+                             *
+                             * @param v .
+                             */
                             @Override
                             public void onClick(View v) {
                                 myDatabase.delete(MyOpenHelper_Cocktail.TABLE_NAME,
@@ -151,8 +168,13 @@ public class DetailsFragment_Cocktail extends Fragment {
     };
 */
 
-    class DetailsCocktail extends AsyncTask<String, Integer, String> {
 
+    class DetailsCocktail extends AsyncTask<String, Integer, String> {
+        /**
+         *
+         * @param urls
+         * @return
+         */
         public String doInBackground(String... urls) {
             try {
                 URL picUrl = new URL(urls[0]);
@@ -174,6 +196,11 @@ public class DetailsFragment_Cocktail extends Fragment {
             }
             return "Done";
         }
+
+        /**
+         *
+         * @param string
+         */
         public void onPostExecute(String string) {
             super.onPostExecute(string);
             picIV.setImageBitmap(bitm);

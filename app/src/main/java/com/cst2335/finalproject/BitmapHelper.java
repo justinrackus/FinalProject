@@ -9,9 +9,16 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class BitmapHelper{
+    /**
+     *
+     * @param s
+     * @param context
+     * @return
+     */
     public static Bitmap getBitmap(String s, Context context){
         URL url = null;
         Bitmap bitmap = null;
+
         try{
             url = new URL(s);
             HttpURLConnection conn = (HttpURLConnection)url.openConnection();

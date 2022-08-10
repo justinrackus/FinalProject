@@ -7,7 +7,10 @@ import android.view.View;
 import android.widget.Button;
 
 public class EmptyActivity_Cocktail extends AppCompatActivity {
-
+    /**
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
